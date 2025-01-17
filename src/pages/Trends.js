@@ -1,0 +1,1 @@
+<h1>List of all treatments</h1>
