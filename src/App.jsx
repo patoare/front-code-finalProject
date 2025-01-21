@@ -1,4 +1,10 @@
-import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import SignupPage from './pages/SignupPage'
+import Trends from './pages/Trends'
+import TherapistsPage from './pages/AllTherapists'
+import NavBar from './components/NavBar'
+
+
 
 
 function App() {
@@ -6,7 +12,14 @@ function App() {
 
   return (
     <>
-      <h1>hey hey</h1>
+    <NavBar />
+      <Routes>
+        <Route path="/" element={<h2>home</h2>} />
+        <Route path="/signup" element={< SignupPage />} />
+        <Route path="/therapists" element={< TherapistsPage />} />
+        <Route path="/trends" element={< Trends />} />
+        <Route path="*" element={<h3>404 Page</h3>} />
+        </Routes>
     </>
   )
 }
