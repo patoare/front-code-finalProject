@@ -1,25 +1,42 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../contexts/AuthContext"
+
 
 const NavBar = () => {
+const {isAuthenticated} = useContext(AuthContext)
+
 return (
     <nav>
         <ul>
             <li>
-<Link to="/">Home</Link>
+               <Link to="/">Home</Link>
+            </li>
+            {!isAuthenticated && (
+             <>
+            <li>
+               <Link to="/signup">Signup</Link>
             </li>
             <li>
-<Link to="/signup">Signup</Link>
+               <Link to="/login">Login</Link>
+            </li>
+            
+             </>
+              )}
+               
+              {isAuthenticated && (
+                <>
+            <li>
+               <Link to="/trends">Trends</Link>
             </li>
             <li>
-<Link to="/login">Login</Link>
+               <Link to="/therapists">All therapists</Link>
             </li>
             <li>
-<Link to="/trends">Trends</Link>
+               <Link to="/profile">Profile</Link>
             </li>
-            <li>
-<Link to="/therapists">All therapists</Link>
-            </li>
-           
+             </>
+             )}
         </ul>
     </nav>
 )
