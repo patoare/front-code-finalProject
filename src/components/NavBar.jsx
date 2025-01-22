@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/AuthContext"
 
 
 const NavBar = () => {
-const {isAuthenticated} = useContext(AuthContext)
+const {isAuthenticated, logout} = useContext(AuthContext)
 
 return (
     <nav>
@@ -26,6 +26,9 @@ return (
                
               {isAuthenticated && (
                 <>
+                <li>
+               <button type="button" onClick={logout}>Logout</button>
+            </li>
             <li>
                <Link to="/trends">Trends</Link>
             </li>

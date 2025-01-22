@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import SignupPage from './pages/SignupPage'
 import Login from './pages/Login'
-
 import Trends from './pages/Trends'
 import TherapistsPage from './pages/AllTherapists'
 import NavBar from './components/NavBar'

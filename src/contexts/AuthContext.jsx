@@ -6,6 +6,8 @@ export const AuthContext = createContext()
 const AuthContextProvider = ({children}) => {
     const [token, setToken] = useState()
     const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
+
 const verifyToken = async(tokenToVerify) => {
     try {
 const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/verify`, {
@@ -14,15 +16,16 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/verify`, {
     }
 })
 if(response.ok) {
-    const data = await response.json()
-    console.log(data)
     setToken(tokenToVerify)
+    setIsAuthenticated(true)
 } else {
     localStorage.removeItem('authToken')
 }
+     setIsLoading(false)
     } catch(error){
 console.log(error)
 localStorage.removeItem('authToken')
+setIsLoading(false)
     }
 }
     useEffect (() => {
@@ -36,10 +39,18 @@ localStorage.removeItem('authToken')
         const storageToken = localStorage.getItem('authToken')
         if(storageToken) {
             verifyToken(storageToken)
+        } else {
+            setIsLoading(false)
         }
     })
 
-    return (<AuthContext.Provider value={{setToken, isAuthenticated}}>{children}</AuthContext.Provider>);
+    const logout = () => {
+        setToken()
+        setIsAuthenticated(false)
+        localStorage.removeItem('authToken')
+    }
+
+    return (<AuthContext.Provider value={{setToken, isAuthenticated, isLoading, logout}}>{children}</AuthContext.Provider>);
 
 }
 export default AuthContextProvider
