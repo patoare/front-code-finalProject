@@ -26,9 +26,7 @@ return (
                
               {isAuthenticated && (
                 <>
-                <li>
-               <button type="button" onClick={logout}>Logout</button>
-            </li>
+               
             <li>
                <Link to="/trends">Trends</Link>
             </li>
@@ -36,7 +34,13 @@ return (
                <Link to="/therapists">All therapists</Link>
             </li>
             <li>
+               <Link to="/treatments/new">Create treatment</Link>
+            </li>
+            <li>
                <Link to="/profile">Profile</Link>
+            </li>
+            <li>
+               <button type="button" onClick={logout}>Logout</button>
             </li>
              </>
              )}

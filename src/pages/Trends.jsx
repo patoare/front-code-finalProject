@@ -16,11 +16,9 @@ const Trends = () => {
          console.log(error)
         }
     }
-
     useEffect(() => {
         fetchAllTreatments()
     }, [])
-
 const handleDelete = async (currentTreatmentId) => {
 try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}/api/treatments/${currentTreatmentId}`, {
@@ -36,7 +34,6 @@ try {
     console.log(error)
 }
 }
-
     return (
     <>
     <h1> Trends </h1>
