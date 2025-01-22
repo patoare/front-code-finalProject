@@ -50,7 +50,7 @@ setIsLoading(false)
         localStorage.removeItem('authToken')
     }
 
-    return (<AuthContext.Provider value={{setToken, isAuthenticated, isLoading, logout}}>{children}</AuthContext.Provider>);
+    return (<AuthContext.Provider value={{ token, setToken, isAuthenticated, isLoading, logout}}>{children}</AuthContext.Provider>);
 
 }
 export default AuthContextProvider
