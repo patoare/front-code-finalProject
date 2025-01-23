@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import SignupPage from './pages/SignupPage'
 import Login from './pages/Login'
 import Trends from './pages/Trends'
+import Treatment from './pages/Treatment'
 import TherapistsPage from './pages/AllTherapists'
 import NewTreatmentPage from './pages/CreateTto'
 import NavBar from './components/NavBar'
@@ -25,6 +26,7 @@ function App() {
         <Route path="/treatments/new" element={<PrivateRoute> <NewTreatmentPage /> </PrivateRoute>} />
         <Route path="/therapists" element={<PrivateRoute> <TherapistsPage /> </PrivateRoute>} />
         <Route path="/trends" element={<PrivateRoute> <Trends /> </PrivateRoute>} />
+        <Route path="/Treatment" element={ <Treatment />} />
         <Route path="*" element={<h3>404 Page</h3>} />
         </Routes>
     </>

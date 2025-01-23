@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react"
+import { Link } from "react-router-dom";
 
 const Trends = () => {
     const {token} = useContext(AuthContext)
@@ -42,7 +43,13 @@ try {
         <li key={currentTreatment._id}>
             <p>{currentTreatment.description}</p>
             <p>{currentTreatment.therapeuticTech}</p>
-            <button type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button></li>
+            <button type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button>
+            
+        <Link to="/treatment">
+            <button type="button">View More</button>
+</Link>
+            
+            </li>
     ))}
     </ul>
     </>
