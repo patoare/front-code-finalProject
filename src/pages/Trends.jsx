@@ -41,6 +41,7 @@ try {
     {treatments.map(currentTreatment => (
         <li key={currentTreatment._id}>
             <p>{currentTreatment.description}</p>
+            <p>{currentTreatment.therapeuticTech}</p>
             <button type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button></li>
     ))}
     </ul>

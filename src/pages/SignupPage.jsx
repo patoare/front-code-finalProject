@@ -1,6 +1,8 @@
 import AuthForm from "../components/AuthForm"
+import { useNavigate } from "react-router-dom"
 
 const SignupPage = () => {
+    const navigate = useNavigate()
 
 const handleSignup = async(credentials) => {
 try{
@@ -12,8 +14,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/signup`, {
     body: JSON.stringify(credentials),
 })
 if(response.status === 201) {
-    console.log('User created on the Frontend')
-    //redirect to a different page
+    navigate('/login')
 }
 } catch(error) {
 //aca poner un distintivo si el user esta en uso
