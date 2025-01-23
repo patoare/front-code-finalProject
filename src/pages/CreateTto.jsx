@@ -9,6 +9,9 @@ const {token} = useContext(AuthContext)
     const [description, setDescription] = useState('')
     const [exercises, setExercises] = useState('')
     const [therapeuticTech, setTherapeuticTech] = useState('')
+    const [frecuency, setFrecuency] = useState('')
+    const [duration, setDuration] = useState('')
+    const [comments, setComments] = useState('')
 
 const handleSubmit = async event => {
     event.preventDefault()
@@ -19,7 +22,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/treatments`, {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
    },
-   body: JSON.stringify({description, exercises, therapeuticTech}),
+   body: JSON.stringify({description, exercises, therapeuticTech, frecuency, duration, comments}),
 })
 if(response.status === 201) {
 navigate('/trends')
@@ -34,13 +37,22 @@ navigate('/trends')
 <h1>Form to post a new treatment</h1>
 <form onSubmit={handleSubmit}>
     <label>Description
-        <input required value={description} onChange={event => setDescription(event.target.value)} />
+        <textarea required value={description} onChange={event => setDescription(event.target.value)} />
     </label>
     <label>Exercises
-        <input required value={exercises} onChange={event => setExercises(event.target.value)}/>
+        <textarea required value={exercises} onChange={event => setExercises(event.target.value)}/>
     </label>
-    <label>TherapeuticTech
+    <label>Therapeutic Technique
         <input required value={therapeuticTech} onChange={event => setTherapeuticTech(event.target.value)}/>
+    </label>
+    <label>Frecuency
+        <input required value={frecuency} onChange={event => setFrecuency(event.target.value)}/>
+    </label>
+    <label>Duration
+        <input required value={duration} onChange={event => setDuration(event.target.value)}/>
+    </label>
+    <label>Comments
+        <input required value={comments} onChange={event => setComments(event.target.value)}/>
     </label>
     <button type="submit">Add new treatment</button>
 </form>

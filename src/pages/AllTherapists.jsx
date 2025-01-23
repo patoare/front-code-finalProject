@@ -26,6 +26,7 @@ const TherapistsPage = () => {
     {users.map(user => (
                     <li key={user._id}>
                         <p>{user.username}</p>
+                        <p>{user.surname}</p>
                         </li>
                 ))}
     </ul>
