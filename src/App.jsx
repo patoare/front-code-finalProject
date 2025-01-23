@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Trends from './pages/Trends'
 import Treatment from './pages/Treatment'
 import TherapistsPage from './pages/AllTherapists'
+import Therapist from './pages/Therapist'
 import NewTreatmentPage from './pages/CreateTto'
 import NavBar from './components/NavBar'
 import PrivateRoute from './components/PrivateRoute'
@@ -26,7 +27,8 @@ function App() {
         <Route path="/treatments/new" element={<PrivateRoute> <NewTreatmentPage /> </PrivateRoute>} />
         <Route path="/therapists" element={<PrivateRoute> <TherapistsPage /> </PrivateRoute>} />
         <Route path="/trends" element={<PrivateRoute> <Trends /> </PrivateRoute>} />
-        <Route path="/Treatment" element={ <Treatment />} />
+        <Route path="/treatment/:id" element={ <Treatment />} />
+        <Route path="/therapist/:id" element={ <Therapist />} />
         <Route path="*" element={<h3>404 Page</h3>} />
         </Routes>
     </>

@@ -45,10 +45,9 @@ try {
             <p>{currentTreatment.therapeuticTech}</p>
             <button type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button>
             
-        <Link to="/treatment">
-            <button type="button">View More</button>
-</Link>
-            
+            <Link to={`/treatment/${currentTreatment._id}`}>
+  <button type="button">View More</button>
+</Link> 
             </li>
     ))}
     </ul>

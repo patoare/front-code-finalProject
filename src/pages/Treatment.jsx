@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react"
+import { useParams } from "react-router-dom";
 
 
-
-const Treatment = ({ currentTreatmentId }) => {
+const Treatment = () => {
 
     const {token} = useContext(AuthContext)
+    const { id } = useParams();
     const [oneTreat, setOneTreat] = useState([]);
+    console.log(id)
    
     const fetchOneTreat = async() => {
        
         try {
-            const response = await fetch (`${import.meta.env.VITE_API_URL}/api/treatments/${currentTreatmentId}`, {
+            const response = await fetch (`${import.meta.env.VITE_API_URL}/api/treatments/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -28,7 +30,7 @@ const Treatment = ({ currentTreatmentId }) => {
     }
     useEffect(() => {
         fetchOneTreat()
-    }, [currentTreatmentId])
+    }, [id])
 
 
 
