@@ -1,10 +1,12 @@
 import { useContext } from "react"
 import AuthForm from "../components/AuthForm"
 import { AuthContext } from "../contexts/AuthContext"
+import { useNavigate } from "react-router-dom"
 
 
 const Login = () => {
 const {setToken} = useContext(AuthContext)
+const navigate = useNavigate();
 
     const handleLogin = async(credentials) => {
         try{
@@ -19,6 +21,7 @@ const {setToken} = useContext(AuthContext)
                 const data = await response.json()
                 console.log(data)
                 setToken(data.authToken)
+                navigate(`/profile/${data.user._id}`);
             }
             } catch(error) {
             console.log(error)

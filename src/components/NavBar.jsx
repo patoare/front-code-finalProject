@@ -37,7 +37,7 @@ return (
                <Link to="/treatments/new">Create treatment</Link>
             </li>
             <li>
-               <Link to="/profile">Profile</Link>
+               <Link to="/profile/">Profile</Link>
             </li>
             <li>
                <button type="button" onClick={logout}>Logout</button>

@@ -9,7 +9,7 @@ const Therapist = () => {
     const {token} = useContext(AuthContext)
     const { id } = useParams();
     const [oneTherapsit, setOneTherapist] = useState([]);
-    console.log(id)
+    
    
     const fetchOneTherapsit = async() => {
        
