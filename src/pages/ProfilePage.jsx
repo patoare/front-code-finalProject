@@ -4,9 +4,8 @@ import { useNavigate, useParams } from "react-router-dom"
 
 
     const ProfilePage = () => {
-    const navigate = useNavigate()
-    const { id } = useParams();
     
+    const navigate = useNavigate()
     const {token} = useContext(AuthContext)
 
     const [area, setArea] = useState('')
@@ -17,7 +16,7 @@ import { useNavigate, useParams } from "react-router-dom"
 const handleSubmit = async event => {
     event.preventDefault()
     try{
-const response = await fetch(`${import.meta.env.VITE_API_URL}/api/therapist/${id}`, {
+const response = await fetch(`${import.meta.env.VITE_API_URL}/api/therapist`, {
    method: "PUT",
    headers: {
     'Content-Type': 'application/json',
@@ -35,7 +34,7 @@ navigate(`/profile/${data.user._id}`)
 
     return(
         <>
-<h1>Let's update your profile</h1>
+<h1 className="titlePage">Let's update your profile</h1>
 <form onSubmit={handleSubmit}>
     <label>Area of preference
         <textarea required value={area} onChange={event => setArea(event.target.value)} />

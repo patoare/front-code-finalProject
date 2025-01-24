@@ -23,7 +23,8 @@ if(response.status === 201) {
 
 return (
 <>
-<h1>Form to register as a therapist</h1>
+<h1 className="titlePage">SINGUP !</h1>
+<h3 className="titlePage">Become a new member</h3>
 <AuthForm submitFunction={handleSignup}></AuthForm>
 
 </>

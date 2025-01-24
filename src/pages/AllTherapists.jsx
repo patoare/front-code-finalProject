@@ -36,14 +36,14 @@ const TherapistsPage = () => {
 
     return (
     <>
-    <h1> All Therapists Page</h1>
-    <ul>
+    <h1 className="titlePage"> LIST OF THERAPIST</h1>
+    <ul className="cardsContainer">
     {users.map(user => (
-                    <li key={user._id}>
+                    <li className="cardsOfTreatment" key={user._id}>
                         <p>{user.username}</p>
                         <p>{user.surname}</p>
                         <Link to={`/therapist/${user._id}`}>
-  <button type="button">View More</button>
+  <button className="button" type="button">View More</button>
 </Link> 
                         </li>
                 ))}

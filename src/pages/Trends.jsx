@@ -37,22 +37,19 @@ try {
 }
     return (
     <>
-    <h1> Trends </h1>
-    <ul>
+    <h1 className="titlePage"> TRENDS </h1>
+    <ul className="cardsContainer">
     {treatments.map(currentTreatment => (
-        <li key={currentTreatment._id}>
-            <p>{currentTreatment.description}</p>
-            <p>{currentTreatment.therapeuticTech}</p>
-            <button type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button>
-            
-            <Link to={`/treatment/${currentTreatment._id}`}>
-  <button type="button">View More</button>
-</Link> 
+        <li className="cardsOfTreatment" key={currentTreatment._id}>
+            <p className="description">{currentTreatment.description}</p>
+            <p># {currentTreatment.therapeuticTech}</p>
+            <p> {currentTreatment.exercises}</p>
+            <button className="button" type="button" onClick={() => handleDelete(currentTreatment._id)}>Delete</button>
+            <Link to={`/treatment/${currentTreatment._id}`}><button className="button" type="button">View More</button></Link> 
             </li>
     ))}
     </ul>
     </>
-    
     )
     }
     export default Trends

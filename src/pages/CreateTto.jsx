@@ -34,7 +34,7 @@ navigate('/trends')
 
     return(
         <>
-<h1>Form to post a new treatment</h1>
+<h1 className="titlePage">Form to post a new treatment</h1>
 <form onSubmit={handleSubmit}>
     <label>Description
         <textarea required value={description} onChange={event => setDescription(event.target.value)} />

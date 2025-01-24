@@ -36,7 +36,7 @@ const Therapist = () => {
 
     return(
         <>
-    <h2>You're seeing a single Therapsit because you liked  the profile</h2>
+    <h2 className="titlePage">You're seeing a single Therapsit because you liked  the profile</h2>
     <ul>
     
             <p>{oneTherapsit.username}</p>

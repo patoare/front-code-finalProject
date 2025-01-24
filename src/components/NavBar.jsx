@@ -1,14 +1,14 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../contexts/AuthContext"
-
+import '../style/App.css'
 
 const NavBar = () => {
 const {isAuthenticated, logout} = useContext(AuthContext)
 
 return (
-    <nav>
-        <ul>
+    <nav className="NavBar">
+        <ul className="menuNavbar">
             <li>
                <Link to="/">Home</Link>
             </li>
@@ -37,10 +37,10 @@ return (
                <Link to="/treatments/new">Create treatment</Link>
             </li>
             <li>
-               <Link to="/profile/">Profile</Link>
+               <Link to="/profile/:id">Profile</Link>
             </li>
             <li>
-               <button type="button" onClick={logout}>Logout</button>
+               <button className="button" type="button" onClick={logout}>Logout</button>
             </li>
              </>
              )}

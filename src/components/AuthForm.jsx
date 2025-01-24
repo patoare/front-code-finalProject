@@ -12,20 +12,20 @@ const handleSubmit = (event) => {
 }
 
 return ( 
-<form onSubmit={handleSubmit}>
-    <label>Username
-        <input required value={username} onChange={event => setUsername(event.target.value)}/>
+<form className="form" onSubmit={handleSubmit}>
+    <label className="label" >Username
+        <input className="input" required value={username} onChange={event => setUsername(event.target.value)}/>
     </label>
-    <label>Surname
-        <input required value={surname} onChange={event => setSurname(event.target.value)}/>
+    <label className="label">Surname
+        <input className="input" required value={surname} onChange={event => setSurname(event.target.value)}/>
     </label>
-    <label>Email
-        <input required value={email} onChange={event => setEmail(event.target.value)} />
+    <label className="label">Email
+        <input className="input" required value={email} onChange={event => setEmail(event.target.value)} />
     </label>
-    <label>Password
-        <input type='password' required value={password} onChange={event => setPassord(event.target.value)}/>
+    <label className="label">Password
+        <input className="input" type='password' required value={password} onChange={event => setPassord(event.target.value)}/>
     </label>
-<button type="submit">SignUp</button>
+<button className="buttonLogin" type="submit">SignUp</button>
 </form>
 )
 }

@@ -18,18 +18,18 @@ const navigate = useNavigate();
                 body: JSON.stringify(credentials),
             })
             if(response.status === 200) {
-                const data = await response.json()
-                console.log(data)
-                setToken(data.authToken)
+                const data = await response.json();
+                console.log("User ID:", data.user._id); 
+                setToken(data.authToken);
                 navigate(`/profile/${data.user._id}`);
-            }
+              }
             } catch(error) {
             console.log(error)
             }
             }
     return (
     <>
-    <h1> Login Page</h1>
+    <h1 className="titlePage"> Login Page</h1>
     <AuthForm submitFunction={handleLogin}></AuthForm>
     </>
 

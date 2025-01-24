@@ -11,7 +11,7 @@ const AnonymusRoute = ({children}) => {
     }
     
     if (isAuthenticated) {
-        return <Navigate to='/profile' />
+        return <Navigate to='/profile/:id' />
     }
 return children
 }

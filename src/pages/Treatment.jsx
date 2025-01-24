@@ -36,11 +36,14 @@ const Treatment = () => {
 
     return(
         <>
-    <h2>You're seeing a single treatment because you're interested on it</h2>
+    <h2 className="titlePage">THIS TREATMENT MATCHES YOUR EXPERTISE</h2>
     <ul>
     
             <p>{oneTreat.description}</p>
             <p>{oneTreat.therapeuticTech}</p>
+            <p>{oneTreat.frecuency}</p>
+            <p>{oneTreat.duration}</p>
+            <p>{oneTreat.comments}</p>
             <button type="button">corazon</button>
             <button type="button">comment</button>
             
