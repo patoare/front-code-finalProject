@@ -7,36 +7,41 @@
 /*Navbar */
 .NavBar {
     width: 100%;
-    background-color: #333; /* Example background color */
-    position: relative; /* To control positioning of children */
-    height: 190px; /* Set a height for the navbar */
+    background-color: #333; 
+    position: relative; 
+    height: 200px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px;    
 }
 
 .menuNavbar {
     list-style: none;
-    display: flex; /* This puts the <li> elements in a row */
-    justify-content: center; /* Center the items horizontally */
-    align-items: flex-end; /* Align the items to the bottom of the navbar */
-    height: 100%; /* Make sure the menu takes full height of the navbar */
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
+    height: 100%; 
     padding: 0;
     margin: 0;
+    flex: 1;
 }
 
 .menuNavbar li {
-    margin: 0 15px; /* Space between links */
+    margin: 0 15px; 
 }
 
 .menuNavbar a, .menuNavbar button {
     text-decoration: none;
-    color: #fff; /* Text color */
-    font-size: 16px; /* Set the font size */
+    color: #ffff; 
+    font-size: 16px; 
     padding: 10px 15px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 .menuNavbar a:hover, .menuNavbar button:hover {
-    background-color: #f7a67b; /* Change background color on hover */
+    background-color: #f7a67b; 
 }
 
 .button {
@@ -47,6 +52,11 @@
     color: white;
     font-size: 16px;
     font-weight: 600;
+}
+
+.logoStyle {
+    width:200px;
+    height: 200px; 
 }
 
   /*general*/
@@ -98,11 +108,43 @@
 
   /*Footer*/
   .Footer {
-    width: 100%;
-    background-color: #333; /* Example background color */
-    position: relative; /* To control positioning of children */
-    height: 190px; /* Set a height for the navbar */
+    background-color: #333; /* Background color for the footer */
+    padding: 20px 0; /* Add vertical spacing */
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
 }
+
+.footerMenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center the items horizontally */
+    padding: 0;
+    margin: 0;
+}
+
+.footerMenu li {
+    margin: 10px 0; /* Add spacing between elements */
+}
+
+.footerMenu a {
+    text-decoration: none;
+    color: #fff; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footerMenu a:hover {
+    color: #f7a67b; /* Hover color for links */
+}
+
+.logoFooter {
+    width: 150px; /* Adjust the size of the logo */
+    height: auto;
+}
+
 
 /*Login / signup*/
 

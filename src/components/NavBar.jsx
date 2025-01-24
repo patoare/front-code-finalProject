@@ -2,13 +2,16 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../contexts/AuthContext"
 import '../style/App.css'
+import logo from '../assets/logo_transparent.png'
 
 const NavBar = () => {
 const {isAuthenticated, logout} = useContext(AuthContext)
 
 return (
     <nav className="NavBar">
+       <img  className="logoStyle" src={logo} alt="Description of image" />
         <ul className="menuNavbar">
+       
             <li>
                <Link to="/">Home</Link>
             </li>
