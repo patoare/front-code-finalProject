@@ -27,9 +27,10 @@ const Treatment = () => {
         }catch(error) {
          console.log(error)
         }
-    }
+    };
+
     useEffect(() => {
-        fetchOneTreat()
+        fetchOneTreat();
     }, [id])
 
 
@@ -39,22 +40,15 @@ const Treatment = () => {
     <h2 className="titlePage">THIS TREATMENT MATCHES YOUR EXPERTISE</h2>
     <ul>
     
-            <p>{oneTreat.description}</p>
-            <p>{oneTreat.therapeuticTech}</p>
-            <p>{oneTreat.frecuency}</p>
-            <p>{oneTreat.duration}</p>
-            <p>{oneTreat.comments}</p>
-           
-            <button className="button" type="button">corazon</button>
-            
-            
-    <button className="button" type="button">Comment</button>
-
-            
-
-    </ul>
+            <p><strong>{oneTreat.description}</strong></p>
+            <p><strong>Date:</strong> {oneTreat.date}</p>
+            <p><strong>Visit number:</strong> {oneTreat.visitNumber}</p>
+            <p><strong>Focus in:</strong> {oneTreat.therapeuticTech}</p>
+            <p> <strong>#</strong> {oneTreat.hashtag}</p>
+          </ul> 
+          
     </>
+  );
+};
 
-    )
-}
 export default Treatment

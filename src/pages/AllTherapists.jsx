@@ -40,8 +40,8 @@ const TherapistsPage = () => {
     <ul className="cardsContainer">
     {users.map(user => (
                     <li className="cardsOfTreatment" key={user._id}>
-                        <p>{user.username}</p>
-                        <p>{user.surname}</p>
+                        <p>{user.username} {user.surname}</p>
+                        <p>{user.country}</p>
                         <Link to={`/therapist/${user._id}`}>
   <button className="button" type="button">View More</button>
 </Link> 

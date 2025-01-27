@@ -8,10 +8,10 @@ const Therapist = () => {
 
     const {token} = useContext(AuthContext)
     const { id } = useParams();
-    const [oneTherapsit, setOneTherapist] = useState([]);
+    const [oneTherapist, setOneTherapist] = useState([]);
     
    
-    const fetchOneTherapsit = async() => {
+    const fetchOneTherapist = async() => {
        
         try {
             const response = await fetch (`${import.meta.env.VITE_API_URL}/api/therapists/${id}`, {
@@ -20,8 +20,8 @@ const Therapist = () => {
                 },
             })
             if(response.ok) {
-                const oneTherapsitData = await response.json()
-                setOneTherapist(oneTherapsitData)
+                const oneTherapistData = await response.json()
+                setOneTherapist(oneTherapistData)
             }
 
         }catch(error) {
@@ -29,19 +29,23 @@ const Therapist = () => {
         }
     }
     useEffect(() => {
-        fetchOneTherapsit()
+        fetchOneTherapist()
     }, [id])
 
 
 
     return(
         <>
-    <h2 className="titlePage">You're seeing a single Therapsit because you liked  the profile</h2>
+    <h2 className="titlePage">You're seeing a single Therapist because you liked  the profile</h2>
     <ul>
     
-            <p>{oneTherapsit.username}</p>
-            <p>{oneTherapsit.surname}</p>
-            <button type="button">❤️</button>
+            <p>{oneTherapist.username}  {oneTherapist.surname}</p>
+            <p></p>
+            <p>I'm from {oneTherapist.country}</p>
+            <p>I can speak in {oneTherapist.languages}</p>
+            <p>{oneTherapist.masters}</p>
+            <p>{oneTherapist.area}</p>
+           <button type="button">❤️</button>
             <button type="button">💬💬</button>
             
 

@@ -9,9 +9,9 @@ const {token} = useContext(AuthContext)
     const [description, setDescription] = useState('')
     const [exercises, setExercises] = useState('')
     const [therapeuticTech, setTherapeuticTech] = useState('')
-    const [frecuency, setFrecuency] = useState('')
-    const [duration, setDuration] = useState('')
-    const [comments, setComments] = useState('')
+    const [date, setDate] = useState('')
+    const [visitNumber, setVisitNumber] = useState('')
+    const [hashtag, setHashtag] = useState('')
 
 const handleSubmit = async event => {
     event.preventDefault()
@@ -22,7 +22,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/treatments`, {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
    },
-   body: JSON.stringify({description, exercises, therapeuticTech, frecuency, duration, comments}),
+   body: JSON.stringify({description, exercises, therapeuticTech, date, visitNumber, hashtag}),
 })
 if(response.status === 201) {
 navigate('/trends')
@@ -45,14 +45,14 @@ navigate('/trends')
     <label className="labelForm" >Therapeutic Technique
         <input className="textCreate" required value={therapeuticTech} onChange={event => setTherapeuticTech(event.target.value)}/>
     </label>
-    <label className="labelForm" >Frecuency
-        <input className="textCreate" required value={frecuency} onChange={event => setFrecuency(event.target.value)}/>
+    <label className="labelForm" >Date
+        <input className="textCreate" required value={date} onChange={event => setDate(event.target.value)}/>
     </label>
-    <label className="labelForm" >Duration
-        <input className="textCreate" required value={duration} onChange={event => setDuration(event.target.value)}/>
+    <label className="labelForm" >Visit Number
+        <input className="textCreate" required value={visitNumber} onChange={event => setVisitNumber(event.target.value)}/>
     </label>
-    <label className="labelForm" >Comments
-        <input className="textCreate" required value={comments} onChange={event => setComments(event.target.value)}/>
+    <label className="labelForm" >Hashtag
+        <input className="textCreate" required value={hashtag} onChange={event => setHashtag(event.target.value)}/>
     </label>
     <button className="button" type="submit">Add new treatment</button>
 </form>

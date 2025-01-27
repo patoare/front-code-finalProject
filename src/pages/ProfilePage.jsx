@@ -7,24 +7,26 @@ import { useNavigate, useParams } from "react-router-dom"
     
     const navigate = useNavigate()
     const {token} = useContext(AuthContext)
-
+   const {id} = useParams()
     const [area, setArea] = useState('')
     const [masters, setMasters] = useState('')
     const [languages, setLanguages] = useState('')
+    const [country, setCountry] = useState('')
    
 
 const handleSubmit = async event => {
     event.preventDefault()
     try{
-const response = await fetch(`${import.meta.env.VITE_API_URL}/api/therapist`, {
+const response = await fetch(`${import.meta.env.VITE_API_URL}/api/therapists/${id}`, {
    method: "PUT",
    headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
    },
-   body: JSON.stringify({area, masters, languages}),
+   body: JSON.stringify({area, masters, languages, country}),
 })
-if(response.status === 200) {
+if(response.ok) {
+    const data = await response.json()
 navigate(`/profile/${data.user._id}`)
 }
     } catch(error) {
@@ -44,6 +46,9 @@ navigate(`/profile/${data.user._id}`)
     </label>
     <label className="labelForm">Languages
         <input required value={languages} onChange={event => setLanguages(event.target.value)}/>
+    </label>
+    <label className="labelForm">Country
+        <input required value={country} onChange={event => setCountry(event.target.value)}/>
     </label>
     <button className="button" type="submit">Create Profile!</button>
 </form>

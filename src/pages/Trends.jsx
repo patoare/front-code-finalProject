@@ -82,8 +82,9 @@ const Trends = () => {
         {treatments.map((currentTreatment) => (
           <li className="cardsOfTreatment" key={currentTreatment._id}>
             <p className="description">{currentTreatment.description}</p>
-            <p># {currentTreatment.therapeuticTech}</p>
+            <p>{currentTreatment.therapeuticTech}</p>
             <p>{currentTreatment.exercises}</p>
+            <p> # {currentTreatment.hashtag}</p>
 
             
 
