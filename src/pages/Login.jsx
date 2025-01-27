@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import AuthForm from "../components/AuthForm"
+import AuthFormLogin from "../components/AuthFormLogin"
 import { AuthContext } from "../contexts/AuthContext"
 import { useNavigate } from "react-router-dom"
 
@@ -30,7 +30,7 @@ const navigate = useNavigate();
     return (
     <>
     <h1 className="titlePage"> Login Page</h1>
-    <AuthForm submitFunction={handleLogin}></AuthForm>
+    <AuthFormLogin submitFunction={handleLogin}></AuthFormLogin>
     </>
 
     )

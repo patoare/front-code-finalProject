@@ -27,6 +27,8 @@ function App() {
         <Route path="/signup" element={<AnonymusRoute> <SignupPage /> </AnonymusRoute>} />
         <Route path='/login' element={<AnonymusRoute> <Login /> </AnonymusRoute>} />
         <Route path='/profile/:id' element={< ProfilePage />} />
+        <Route path='/comments' element={< Comments />} />
+        <Route path='/comments/:id' element={< Comments />} />
         <Route path="/treatments/new" element={<PrivateRoute> <NewTreatmentPage /> </PrivateRoute>} />
         <Route path="/therapists" element={<PrivateRoute> <TherapistsPage /> </PrivateRoute>} />
         <Route path="/trends" element={<PrivateRoute> <Trends /> </PrivateRoute>} />

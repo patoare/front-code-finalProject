@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Treatment = () => {
@@ -46,7 +47,10 @@ const Treatment = () => {
             <p><strong>Focus in:</strong> {oneTreat.therapeuticTech}</p>
             <p> <strong>#</strong> {oneTreat.hashtag}</p>
           </ul> 
-          
+          <li><Link to={`/comments/${id}`}>
+              <button className="button" type="button">Comments</button>
+            </Link>
+            </li>
     </>
   );
 };
