@@ -9,7 +9,7 @@ const Treatment = () => {
     const {token} = useContext(AuthContext)
     const { id } = useParams();
     const [oneTreat, setOneTreat] = useState([]);
-    console.log(id)
+    
    
     const fetchOneTreat = async() => {
        
@@ -44,8 +44,12 @@ const Treatment = () => {
             <p>{oneTreat.frecuency}</p>
             <p>{oneTreat.duration}</p>
             <p>{oneTreat.comments}</p>
-            <button type="button">corazon</button>
-            <button type="button">comment</button>
+           
+            <button className="button" type="button">corazon</button>
+            
+            
+    <button className="button" type="button">Comment</button>
+
             
 
     </ul>

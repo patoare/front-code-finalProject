@@ -95,7 +95,7 @@
     list-style: none;
   }
   .cardsOfTreatment{
-    background-color: #b8da8d;
+    background-color: #ffffff;
     margin: 10px;
     padding: 20px;
     border-radius: 8px;
@@ -211,4 +211,33 @@ input:focus {
     cursor: not-allowed;
 }
 
+/*Create tto page*/
+ 
+.formCreate {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.labelForm {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #333;
+}
+
+.textCreate {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
 

@@ -35,17 +35,17 @@ navigate(`/profile/${data.user._id}`)
     return(
         <>
 <h1 className="titlePage">Let's update your profile</h1>
-<form onSubmit={handleSubmit}>
-    <label>Area of preference
-        <textarea required value={area} onChange={event => setArea(event.target.value)} />
+<form className="formCreate" onSubmit={handleSubmit}>
+    <label className="labelForm">Area of preference
+        <textarea className="textCreate" required value={area} onChange={event => setArea(event.target.value)} />
     </label>
-    <label>Masters
-        <textarea required value={masters} onChange={event => setMasters(event.target.value)}/>
+    <label className="labelForm">Masters
+        <textarea className="textCreate" required value={masters} onChange={event => setMasters(event.target.value)}/>
     </label>
-    <label>Languages
+    <label className="labelForm">Languages
         <input required value={languages} onChange={event => setLanguages(event.target.value)}/>
     </label>
-    <button type="submit">Create Profile!</button>
+    <button className="button" type="submit">Create Profile!</button>
 </form>
 </>
     )

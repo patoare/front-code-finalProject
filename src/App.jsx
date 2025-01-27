@@ -1,8 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import SignupPage from './pages/SignupPage'
 import Login from './pages/Login'
+
 import Trends from './pages/Trends'
 import Treatment from './pages/Treatment'
+import Comments from './pages/Comments'
 import TherapistsPage from './pages/AllTherapists'
 import Therapist from './pages/Therapist'
 import NewTreatmentPage from './pages/CreateTto'
@@ -26,6 +28,7 @@ function App() {
         <Route path="/signup" element={<AnonymusRoute> <SignupPage /> </AnonymusRoute>} />
         <Route path='/login' element={<AnonymusRoute> <Login /> </AnonymusRoute>} />
         <Route path='/profile/:id' element={< ProfilePage />} />
+        <Route path='/comments' element={< Comments />} />
         <Route path="/treatments/new" element={<PrivateRoute> <NewTreatmentPage /> </PrivateRoute>} />
         <Route path="/therapists" element={<PrivateRoute> <TherapistsPage /> </PrivateRoute>} />
         <Route path="/trends" element={<PrivateRoute> <Trends /> </PrivateRoute>} />

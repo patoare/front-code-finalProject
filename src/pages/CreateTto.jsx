@@ -35,26 +35,26 @@ navigate('/trends')
     return(
         <>
 <h1 className="titlePage">Form to post a new treatment</h1>
-<form onSubmit={handleSubmit}>
-    <label>Description
-        <textarea required value={description} onChange={event => setDescription(event.target.value)} />
+<form className="formCreate" onSubmit={handleSubmit}>
+    <label className="labelForm" >Description
+        <textarea className="textCreate" required value={description} onChange={event => setDescription(event.target.value)} />
     </label>
-    <label>Exercises
-        <textarea required value={exercises} onChange={event => setExercises(event.target.value)}/>
+    <label className="labelForm" >Exercises
+        <textarea className="textCreate" required value={exercises} onChange={event => setExercises(event.target.value)}/>
     </label>
-    <label>Therapeutic Technique
-        <input required value={therapeuticTech} onChange={event => setTherapeuticTech(event.target.value)}/>
+    <label className="labelForm" >Therapeutic Technique
+        <input className="textCreate" required value={therapeuticTech} onChange={event => setTherapeuticTech(event.target.value)}/>
     </label>
-    <label>Frecuency
-        <input required value={frecuency} onChange={event => setFrecuency(event.target.value)}/>
+    <label className="labelForm" >Frecuency
+        <input className="textCreate" required value={frecuency} onChange={event => setFrecuency(event.target.value)}/>
     </label>
-    <label>Duration
-        <input required value={duration} onChange={event => setDuration(event.target.value)}/>
+    <label className="labelForm" >Duration
+        <input className="textCreate" required value={duration} onChange={event => setDuration(event.target.value)}/>
     </label>
-    <label>Comments
-        <input required value={comments} onChange={event => setComments(event.target.value)}/>
+    <label className="labelForm" >Comments
+        <input className="textCreate" required value={comments} onChange={event => setComments(event.target.value)}/>
     </label>
-    <button type="submit">Add new treatment</button>
+    <button className="button" type="submit">Add new treatment</button>
 </form>
 </>
     )

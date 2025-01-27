@@ -9,7 +9,7 @@ const {isAuthenticated, logout} = useContext(AuthContext)
 
 return (
     <nav className="NavBar">
-       <img  className="logoStyle" src={logo} alt="Description of image" />
+       <img  className="logoStyle" src={logo} alt="Logo" />
         <ul className="menuNavbar">
        
             <li>
