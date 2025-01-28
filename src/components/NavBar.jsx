@@ -10,7 +10,11 @@ const NavBar = () => {
 
   return (
     <nav className="NavBar">
-      <img className="logoStyle" src={logo} alt="Logo" />
+      
+      <Link to="/">
+      <img  className="logoStyle" src={logo} alt="logo" />
+      </Link>
+                  
       <ul className="menuNavbar">
 
 

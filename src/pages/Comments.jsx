@@ -78,38 +78,38 @@ const Comments = () => {
 
 return (
     <div>
-      <h1>Comments for Treatment</h1>
+      <h1 className="titlePage">Comments of the Treatment</h1>
 
       {/* Form to create a new comment */}
-      <h2>Add a new comment</h2>
-      <form onSubmit={handleCreateComment}>
-      <label>
+      <h2 className="titlePage">New comment</h2>
+      <form className="formCreate" onSubmit={handleCreateComment}>
+      <label  className="labelForm">
           Date:
-          <textarea
+          <textarea className="textCreate"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           ></textarea>
         </label>
-        <label>
+        <label  className="labelForm">
           Comments about the patient:
-          <textarea
+          <textarea className="textCreate"
             value={commentPatient}
             onChange={(e) => setCommentPatient(e.target.value)}
           ></textarea>
         </label>
         <br />
-        <label>
+        <label  className="labelForm">
           Comments about the treatment:
-          <textarea
+          <textarea className="textCreate"
             value={commentTreatment}
             onChange={(e) => setCommentTreatment(e.target.value)}
           ></textarea>
         </label>
         <br />
-        <button type="submit">Post Comment</button>
+        <button className="button" type="submit">Post Comment</button>
       </form>
       {/* Show existing comments */}
-      <div >
+      <div>
         {comments.length > 0 ? (
           comments.map((comment) => (
             <div className="commentsCard" key={comment._id}>

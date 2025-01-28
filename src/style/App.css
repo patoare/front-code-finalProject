@@ -186,7 +186,20 @@ body {
     height: auto;
 }
 
+.gitLogo {
+    width: 40px;
+    height: 40px;
+}
 
+.linkedinLogo {
+    width: 45px;
+    height: 45px;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 15px; 
+}
 /*Login / signup*/
 
 /* General Styling for the Form Container */
@@ -285,15 +298,39 @@ input:focus {
 
 /*comments page*/
 .commentsCard {
-    border: #222222 1px solid;
-    margin-bottom: 10px;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Esto centra los botones horizontalmente */
+    text-align: center; 
 }
 
 
 /*Home page*/
 .backgroundHome {
     width: 80%;
-    margin: 10%;
-    border: #222222 3px solid;
-    border-radius: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    border-radius: 10px;   
+
+}
+
+.textHomePAge {
+    position: relative; /* Asegura que el texto esté por encima del video */
+    z-index: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white; /* Asegura que el texto sea visible sobre el video */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+
 }
