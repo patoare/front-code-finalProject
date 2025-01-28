@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const Trends = () => {
   const { token } = useContext(AuthContext); 
   const [treatments, setTreatments] = useState([]); 
+  const [filteredTreatments, setFilteredTreatments] = useState([]); // Lista filtrada
+  const [searchTerm, setSearchTerm] = useState(""); // Término de búsqueda
   const [userId, setUserId] = useState(null); 
 
   // Obtener la información del usuario autenticado
@@ -41,6 +43,7 @@ const Trends = () => {
       if (response.ok) {
         const treatmentsData = await response.json();
         setTreatments(treatmentsData);
+        setFilteredTreatments(treatmentsData); 
       } else {
         console.error("Error al obtener tratamientos");
       }
@@ -73,13 +76,34 @@ const Trends = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(term);
+
+    // Filtrar tratamientos según el término de búsqueda (por hashtag)
+    const filtered = treatments.filter((treatment) =>
+      treatment.hashtag.toLowerCase().includes(term)
+    );
+
+    setFilteredTreatments(filtered);
+  };
 
 
   return (
     <>
       <h1 className="titlePage">TRENDS</h1>
+{/* Barra de búsqueda */}
+<div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search by hashtag..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      </div>
+
       <ul className="cardsContainer">
-        {treatments.map((currentTreatment) => (
+        {filteredTreatments.map((currentTreatment) => (
           <li className="cardsOfTreatment" key={currentTreatment._id}>
             <p className="description">{currentTreatment.description}</p>
             <p>{currentTreatment.therapeuticTech}</p>
