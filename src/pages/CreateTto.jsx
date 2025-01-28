@@ -52,7 +52,7 @@ navigate('/trends')
         <input className="textCreate" required value={visitNumber} onChange={event => setVisitNumber(event.target.value)}/>
     </label>
     <label className="labelForm" >Hashtag
-        <input className="textCreate" required value={hashtag} onChange={event => setHashtag(event.target.value)}/>
+        <input className="textCreate" placeholder="Neck | Shoulder | Elbow | Low Back | Knee | Ankle" required value={hashtag} onChange={event => setHashtag(event.target.value)}/>
     </label>
     <button className="button" type="submit">Add new treatment</button>
 </form>

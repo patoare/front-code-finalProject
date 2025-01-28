@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #root {
     background-color: #f1f3f4;
     height: 100%;
@@ -100,11 +106,46 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Esto centra los botones horizontalmente */
+    text-align: center; /* Opcional, alinea el texto */
     }
+
+    .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px; /* Espacio entre botones */
+        justify-content: center; /* Asegura que estén centrados */
+      }
+
+
+.cardsOfTreatment:hover {
+    transform: scale(1.05);
+    border: 1px solid black;
+  }
 
     .description {
         font-weight: bolder;
     }
+
+    .search-bar {
+        display: flex;
+        justify-content: flex-end; /* Alineación a la izquierda */
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        max-width: 300px; /* Limita el ancho del input */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
 
   /*Footer*/
   .Footer {
@@ -241,3 +282,18 @@ input:focus {
     transition: border-color 0.3s ease;
 }
 
+
+/*comments page*/
+.commentsCard {
+    border: #222222 1px solid;
+    margin-bottom: 10px;
+}
+
+
+/*Home page*/
+.backgroundHome {
+    width: 80%;
+    margin: 10%;
+    border: #222222 3px solid;
+    border-radius: 20px;
+}

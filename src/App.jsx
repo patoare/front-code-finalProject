@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRoute'
 import ProfilePage from './pages/ProfilePage'
 import AnonymusRoute from './components/AnonymusRoute'
 import "./style/App.css";
+import HomePage from './pages/HomePage'
 
 
 
@@ -23,7 +24,7 @@ function App() {
     <>
     <NavBar />
       <Routes>
-        <Route path="/" element={<h2>home</h2>} />
+        <Route path="/" element={< HomePage />} />
         <Route path="/signup" element={<AnonymusRoute> <SignupPage /> </AnonymusRoute>} />
         <Route path='/login' element={<AnonymusRoute> <Login /> </AnonymusRoute>} />
         <Route path='/profile/:id' element={< ProfilePage />} />

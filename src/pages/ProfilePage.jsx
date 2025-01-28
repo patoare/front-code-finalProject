@@ -44,7 +44,7 @@ navigate(`/profile/${data.user._id}`)
     <label className="labelForm">Masters
         <textarea className="textCreate" required value={masters} onChange={event => setMasters(event.target.value)}/>
     </label>
-    <label className="labelForm">Languages
+    <label className="labelForm">Languages       
         <input required value={languages} onChange={event => setLanguages(event.target.value)}/>
     </label>
     <label className="labelForm">Country

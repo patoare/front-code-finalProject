@@ -47,10 +47,11 @@ const Treatment = () => {
             <p><strong>Focus in:</strong> {oneTreat.therapeuticTech}</p>
             <p> <strong>#</strong> {oneTreat.hashtag}</p>
           </ul> 
-          <li><Link to={`/comments/${id}`}>
+          <div className="button-container">
+          <Link to={`/comments/${id}`}>
               <button className="button" type="button">Comments</button>
             </Link>
-            </li>
+            </div>
     </>
   );
 };

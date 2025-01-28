@@ -8,6 +8,7 @@ const Comments = () => {
     const {token} = useContext(AuthContext)
     const{ id } = useParams()
     const [comments, setComments] = useState([]);
+    const [date, setDate] = useState('');
     const [commentPatient, setCommentPatient] = useState('');
     const [commentTreatment, setCommentTreatment] = useState('');
 
@@ -26,6 +27,7 @@ const Comments = () => {
                 if(response.ok) {
                     const commentsData = await response.json();
                     setComments(commentsData);
+
                 }
     
             }catch(error) {
@@ -40,7 +42,7 @@ const Comments = () => {
         const handleCreateComment = async (e) => {
             e.preventDefault();
         
-            if (!commentPatient || !commentTreatment) {
+            if (!commentPatient || !commentTreatment || !date) {
               alert("Please fill in all fields");
               return;
             }
@@ -54,6 +56,7 @@ const Comments = () => {
                 },
                 body: JSON.stringify({
                   treatment: id,
+                  date: date,
                   commentPatient: commentPatient,
                   commentTreatment: commentTreatment,
                 }),
@@ -62,6 +65,7 @@ const Comments = () => {
               if (response.ok) {
                 const newComment = await response.json();
                 setComments([...comments, newComment]); // Add the new comment to the list
+                setDate('');
                 setCommentPatient('');
                 setCommentTreatment('');
               } else {
@@ -76,23 +80,16 @@ return (
     <div>
       <h1>Comments for Treatment</h1>
 
-      {/* Show existing comments */}
-      <div>
-        {comments.length > 0 ? (
-          comments.map((comment) => (
-            <div key={comment._id}>
-              <p><strong>Patient Comment:</strong> {comment.commentPatient}</p>
-              <p><strong>Treatment Comment:</strong> {comment.commentTreatment}</p>
-            </div>
-          ))
-        ) : (
-          <p>No comments yet</p>
-        )}
-      </div>
-
       {/* Form to create a new comment */}
       <h2>Add a new comment</h2>
       <form onSubmit={handleCreateComment}>
+      <label>
+          Date:
+          <textarea
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          ></textarea>
+        </label>
         <label>
           Comments about the patient:
           <textarea
@@ -111,6 +108,22 @@ return (
         <br />
         <button type="submit">Post Comment</button>
       </form>
+      {/* Show existing comments */}
+      <div >
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <div className="commentsCard" key={comment._id}>
+              <p><strong>Date:</strong> {comment.date}</p>
+              <p><strong>Patient Comment:</strong> {comment.commentPatient}</p>
+              <p><strong>Treatment Comment:</strong> {comment.commentTreatment}</p>
+               {/* Mostrar información sobre el creador del comentario */}
+              <p><strong>Created By:</strong> {comment.createdBy.type}</p>
+            </div>
+          ))
+        ) : (
+          <p>No comments yet</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -96,7 +96,7 @@ const Trends = () => {
 <div className="search-bar">
         <input
           type="text"
-          placeholder="Search by hashtag..."
+          placeholder="Neck, Shoulder, Elbow, etc..."
           value={searchTerm}
           onChange={handleSearch}
         />
@@ -112,7 +112,7 @@ const Trends = () => {
 
             
 
-            {/* Mostrar el botón "Delete" solo si el usuario es el propietario */}
+            <div className="button-container">
             {userId === currentTreatment.createdBy._id && (
               <button className="button" type="button" onClick={() => handleDelete(currentTreatment._id)}>
                 Delete
@@ -121,6 +121,7 @@ const Trends = () => {
             <Link to={`/treatment/${currentTreatment._id}`}>
               <button className="button" type="button">View More</button>
             </Link>
+            </div>
           </li>
         ))}
       </ul>

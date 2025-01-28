@@ -36,17 +36,13 @@ const Therapist = () => {
 
     return(
         <>
-    <h2 className="titlePage">You're seeing a single Therapist because you liked  the profile</h2>
+    <h2 className="titlePage">Therapist profile</h2>
     <ul>
-    
             <p>{oneTherapist.username}  {oneTherapist.surname}</p>
-            <p></p>
             <p>I'm from {oneTherapist.country}</p>
             <p>I can speak in {oneTherapist.languages}</p>
-            <p>{oneTherapist.masters}</p>
-            <p>{oneTherapist.area}</p>
-           <button type="button">❤️</button>
-            <button type="button">💬💬</button>
+            <p>I use to work with {oneTherapist.masters}</p>
+            <p>I feel confident working in {oneTherapist.area}</p>
             
 
     </ul>
