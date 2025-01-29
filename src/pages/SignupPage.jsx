@@ -1,5 +1,6 @@
 import AuthForm from "../components/AuthForm"
 import { useNavigate } from "react-router-dom"
+import  Swal  from "sweetalert2"
 
 const SignupPage = () => {
     const navigate = useNavigate()
@@ -15,6 +16,13 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/signup`, {
 })
 if(response.status === 201) {
     navigate('/login')
+} else {
+        Swal.fire({
+          title: "Error",
+          text: "Username already in use",
+          icon: "error",
+          confirmButtonText: "Try anotherone!",
+  });
 }
 } catch(error) {
 //aca poner un distintivo si el user esta en uso

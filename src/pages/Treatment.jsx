@@ -41,11 +41,12 @@ const Treatment = () => {
     <h2 className="titlePage">THIS TREATMENT MATCHES YOUR EXPERTISE</h2>
     <ul>
     
-            <p><strong>{oneTreat.description}</strong></p>
+            <p><strong> {oneTreat.description}</strong></p>
             <p><strong>Date:</strong> {oneTreat.date}</p>
             <p><strong>Visit number:</strong> {oneTreat.visitNumber}</p>
-            <p><strong>Focus in:</strong> {oneTreat.therapeuticTech}</p>
-            <p> <strong>#</strong> {oneTreat.hashtag}</p>
+            <p>{oneTreat.therapeuticTech}</p>
+            <p>{oneTreat.exercises}</p>
+            <p> <strong># {oneTreat.hashtag}</strong></p>
           </ul> 
           <div className="button-container">
           <Link to={`/comments/${id}`}>

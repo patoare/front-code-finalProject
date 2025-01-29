@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext"
 import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2";
 
 const CreateTto = () => {
     const navigate = useNavigate()
@@ -32,6 +33,41 @@ navigate('/trends')
     }
 }
 
+const handleHashtagClick = async () => {
+    // Llamar a SweetAlert2 para seleccionar una parte del cuerpo
+    const { value: bodyPart } = await Swal.fire({
+      title: "Select the body part",
+      input: "select",
+      inputOptions: {
+        "Body Parts": {
+          neck: "Neck",
+          shoulder: "Shoulder",
+          elbow: "Elbow",
+          wrist: "Wrist",
+          lowBack: "Low Back",
+          hip: "Hip",
+          knee: "Knee",
+          ankle: "Ankle"
+        }
+      },
+      inputPlaceholder: "Select a body part",
+      showCancelButton: true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value) {
+            resolve();
+          } else {
+            resolve("You need to select a body part :)");
+          }
+        });
+      }
+    });
+
+    if (bodyPart) {
+      setHashtag(bodyPart); // Asignar la opción seleccionada al campo hashtag
+    }
+  };
+
     return(
         <>
 <h1 className="titlePage">Form to post a new treatment</h1>
@@ -52,7 +88,11 @@ navigate('/trends')
         <input className="textCreate" required value={visitNumber} onChange={event => setVisitNumber(event.target.value)}/>
     </label>
     <label className="labelForm" >Hashtag
-        <input className="textCreate" placeholder="Neck | Shoulder | Elbow | Low Back | Knee | Ankle" required value={hashtag} onChange={event => setHashtag(event.target.value)}/>
+        <input className="textCreate"
+            placeholder="Click to select a body part"
+            value={hashtag}
+            onClick={handleHashtagClick} // Abre el popup al hacer clic
+            readOnly/>
     </label>
     <button className="button" type="submit">Add new treatment</button>
 </form>

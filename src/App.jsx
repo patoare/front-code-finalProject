@@ -14,7 +14,7 @@ import ProfilePage from './pages/ProfilePage'
 import AnonymusRoute from './components/AnonymusRoute'
 import "./style/App.css";
 import HomePage from './pages/HomePage'
-
+import ErrorPage from './pages/ErrorPage'
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
         <Route path="/trends" element={<PrivateRoute> <Trends /> </PrivateRoute>} />
         <Route path="/treatment/:id" element={ <Treatment />} />
         <Route path="/therapist/:id" element={ <Therapist />} />
-        <Route path="*" element={<h3>404 Page</h3>} />
+        <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer/>
     </>

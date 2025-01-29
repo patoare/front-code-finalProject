@@ -93,6 +93,30 @@ body {
         background: #f7f7f7;
   }
 
+  /*Home page*/
+.backgroundHome {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    border-radius: 10px;   
+
+}
+
+.textHomePAge {
+    position: relative; /* Asegura que el texto esté por encima del video */
+    z-index: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white; /* Asegura que el texto sea visible sobre el video */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
   /* Trends */
   .cardsContainer{
     display: grid;
@@ -121,14 +145,14 @@ body {
       }
 
 
-.cardsOfTreatment:hover {
+    .cardsOfTreatment:hover {
     transform: scale(1.05);
     border: 1px solid black;
-  }
+      }
 
     .description {
         font-weight: bolder;
-    }
+      }
 
     .search-bar {
         display: flex;
@@ -136,7 +160,7 @@ body {
         padding: 20px;
         margin: 0 auto;
         max-width: 1200px;
-    }
+      }
 
     .search-bar input {
         width: 100%;
@@ -147,62 +171,8 @@ body {
         font-size: 1rem;
       }
 
-  /*Footer*/
-  .Footer {
-    background-color: #333; /* Background color for the footer */
-    padding: 20px 0; /* Add vertical spacing */
-    display: flex;
-    justify-content: center; /* Center the items horizontally */
-    align-items: center; /* Center the items vertically */
-}
-
-.footerMenu {
-    list-style: none;
-    display: flex;
-    flex-direction: column; /* Stack the items vertically */
-    align-items: center; /* Center the items horizontally */
-    padding: 0;
-    margin: 0;
-}
-
-.footerMenu li {
-    margin: 10px 0; /* Add spacing between elements */
-}
-
-.footerMenu a {
-    text-decoration: none;
-    color: #fff; /* Text color */
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footerMenu a:hover {
-    color: #f7a67b; /* Hover color for links */
-}
-
-.logoFooter {
-    width: 150px; /* Adjust the size of the logo */
-    height: auto;
-}
-
-.gitLogo {
-    width: 40px;
-    height: 40px;
-}
-
-.linkedinLogo {
-    width: 45px;
-    height: 45px;
-}
-
-.socialLinks {
-    display: flex;
-    gap: 15px; 
-}
+ 
 /*Login / signup*/
-
-/* General Styling for the Form Container */
 .form {
     background: #fff;
     border-radius: 10px;
@@ -235,13 +205,11 @@ body {
     margin-left: 30px;
 }
 
-/* Focus Effect on Input Fields */
 input:focus {
     border-color: #f7a67b;
     background-color: #fff;
 }
 
-/* Submit Button Styling */
 .buttonLogin {
     background-color: #f7a67b;
     color: white;
@@ -254,18 +222,14 @@ input:focus {
     transition: background-color 0.3s ease;
 }
 
-/* Hover Effect for Button */
 .buttonLogin:hover {
     background-color: #f08a52;
 }
 
-/* Button Disabled State */
 .buttonLogin:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
-
-/*Create tto page*/
  
 .formCreate {
     background-color: #ffffff;
@@ -295,7 +259,6 @@ input:focus {
     transition: border-color 0.3s ease;
 }
 
-
 /*comments page*/
 .commentsCard {
     background-color: #ffffff;
@@ -310,27 +273,57 @@ input:focus {
     text-align: center; 
 }
 
+   /*Footer*/
+   .Footer {
+    background-color: #333; /* Background color for the footer */
+    padding: 20px 0; /* Add vertical spacing */
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+  }
 
-/*Home page*/
-.backgroundHome {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 2%;
-    border-radius: 10px;   
+.footerMenu {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center the items horizontally */
+    padding: 0;
+    margin: 0;
+  }
 
-}
+.footerMenu li {
+    margin: 10px 0; /* Add spacing between elements */
+  }
 
-.textHomePAge {
-    position: relative; /* Asegura que el texto esté por encima del video */
-    z-index: 1;
-    text-align: center;
-    font-size: 1.2rem;
-    color: white; /* Asegura que el texto sea visible sobre el video */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+.footerMenu a {
+    text-decoration: none;
+    color: #fff; /* Text color */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
 
-}
+.footerMenu a:hover {
+  color: #f7a67b; /* Hover color for links */
+  }
+
+.logoFooter {
+  width: 150px; /* Adjust the size of the logo */
+  height: auto;
+  }
+
+.gitLogo {
+  width: 40px;
+  height: 40px;
+  }
+
+.linkedinLogo {
+  width: 45px;
+  height: 45px;
+  }
+
+.socialLinks {
+  display: flex;
+  gap: 15px; 
+  }
+  

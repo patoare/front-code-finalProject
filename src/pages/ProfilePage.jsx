@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext"
 import { useNavigate, useParams } from "react-router-dom"
-
+import  Swal  from "sweetalert2"
 
     const ProfilePage = () => {
     
@@ -27,10 +27,21 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/therapists/${i
 })
 if(response.ok) {
     const data = await response.json()
-navigate(`/profile/${data.user._id}`)
+    Swal.fire({
+        title: "Profile updated!",
+        icon: "success",
+        confirmButtonText: "Back to Home Page"
+      });
+navigate(`/`)
 }
     } catch(error) {
         console.log(error)
+        Swal.fire({
+        title: "Error",
+        text: "Something went wrong",
+        icon: "error",
+        confirmButtonText: "Try again!",
+     });
     }
 }
 
