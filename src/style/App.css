@@ -2,12 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+}
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 #root {
     background-color: #f1f3f4;
     height: 100%;
-    width: 100vw;
+    width: 100%;
   }
 
 /*Navbar */

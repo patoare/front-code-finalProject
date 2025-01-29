@@ -38,9 +38,9 @@ const Treatment = () => {
 
     return(
         <>
-    <h2 className="titlePage">THIS TREATMENT MATCHES YOUR EXPERTISE</h2>
+    <h2 className="titlePage"> {oneTreat.patientName}</h2>
     <ul>
-            <p><strong>Patient name:</strong> {oneTreat.patientName}</p>
+            
             <p><strong> {oneTreat.description}</strong></p>
             <p><strong>Date:</strong> {oneTreat.date}</p>
             <p><strong>Visit number:</strong> {oneTreat.visitNumber}</p>
