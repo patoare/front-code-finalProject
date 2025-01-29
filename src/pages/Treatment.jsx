@@ -40,7 +40,7 @@ const Treatment = () => {
         <>
     <h2 className="titlePage">THIS TREATMENT MATCHES YOUR EXPERTISE</h2>
     <ul>
-    
+            <p><strong>Patient name:</strong> {oneTreat.patientName}</p>
             <p><strong> {oneTreat.description}</strong></p>
             <p><strong>Date:</strong> {oneTreat.date}</p>
             <p><strong>Visit number:</strong> {oneTreat.visitNumber}</p>

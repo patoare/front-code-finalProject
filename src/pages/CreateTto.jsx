@@ -7,6 +7,7 @@ const CreateTto = () => {
     const navigate = useNavigate()
 const {token} = useContext(AuthContext)
 
+    const [patientName, setPatientName] = useState('')
     const [description, setDescription] = useState('')
     const [exercises, setExercises] = useState('')
     const [therapeuticTech, setTherapeuticTech] = useState('')
@@ -23,7 +24,7 @@ const response = await fetch(`${import.meta.env.VITE_API_URL}/api/treatments`, {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
    },
-   body: JSON.stringify({description, exercises, therapeuticTech, date, visitNumber, hashtag}),
+   body: JSON.stringify({patientName, description, exercises, therapeuticTech, date, visitNumber, hashtag}),
 })
 if(response.status === 201) {
 navigate('/trends')
@@ -47,7 +48,8 @@ const handleHashtagClick = async () => {
           lowBack: "Low Back",
           hip: "Hip",
           knee: "Knee",
-          ankle: "Ankle"
+          ankle: "Ankle",
+          others: "Others"
         }
       },
       inputPlaceholder: "Select a body part",
@@ -72,6 +74,9 @@ const handleHashtagClick = async () => {
         <>
 <h1 className="titlePage">Form to post a new treatment</h1>
 <form className="formCreate" onSubmit={handleSubmit}>
+    <label className="labelForm" >Patient name
+        <textarea className="textCreate" required value={patientName} onChange={event => setPatientName(event.target.value)} />
+    </label>
     <label className="labelForm" >Description
         <textarea className="textCreate" required value={description} onChange={event => setDescription(event.target.value)} />
     </label>

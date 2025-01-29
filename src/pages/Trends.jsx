@@ -105,6 +105,7 @@ const Trends = () => {
       <ul className="cardsContainer">
         {filteredTreatments.map((currentTreatment) => (
           <li className="cardsOfTreatment" key={currentTreatment._id}>
+            <p className="description"> {currentTreatment.patientName}</p>
             <p className="description"> {currentTreatment.description.charAt(0).toUpperCase() + currentTreatment.description.slice(1)}</p>
             
             <p> # {currentTreatment.hashtag.toUpperCase()}</p>
