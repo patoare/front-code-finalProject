@@ -56,12 +56,14 @@ navigate(`/`)
         <textarea className="textCreate" required value={masters} onChange={event => setMasters(event.target.value)}/>
     </label>
     <label className="labelForm">Languages       
-        <input required value={languages} onChange={event => setLanguages(event.target.value)}/>
+        <textarea className="textCreate" required value={languages} onChange={event => setLanguages(event.target.value)}/>
     </label>
     <label className="labelForm">Country
-        <input required value={country} onChange={event => setCountry(event.target.value)}/>
+        <textarea className="textCreate" required value={country} onChange={event => setCountry(event.target.value)}/>
     </label>
+    <div className="comment-buttons">
     <button className="button" type="submit">Create Profile!</button>
+    </div>
 </form>
 </>
     )

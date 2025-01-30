@@ -82,10 +82,10 @@ const Comments = () => {
 
 return (
     <div>
-      <h1 className="titlePage">Comments of the Treatment</h1>
+      <h1 className="titlePage">History of treatments </h1>
 
       {/* Form to create a new comment */}
-      <h2 className="titlePage">New comment</h2>
+      <h2 className="titlePage">New session</h2>
       <form className="formCreate" onSubmit={handleCreateComment}>
       <label  className="labelForm">
           Date:
@@ -117,10 +117,12 @@ return (
           ></textarea>
         </label>
         <br />
+        <div className="comment-buttons">
         <button className="button" type="submit">Post Comment</button>
         <Link to={`/treatment/${id}`}>
               <button className="button" type="button">Back</button>
             </Link>
+            </div>
       </form>
       {/* Show existing comments */}
       <div className="comments-container">

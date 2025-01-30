@@ -222,6 +222,12 @@ html {
   gap: 20px; /* Espaciado entre tarjetas */
   justify-content: center;
 }
+
+.comment-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;  
+}
  
 /*Therapist page */
 
