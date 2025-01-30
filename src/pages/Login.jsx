@@ -26,7 +26,7 @@ const navigate = useNavigate();
                         title: "You're successfully logged in!",
                         icon: "success",
                       });
-                navigate(`/`);
+                navigate(`/trends`);
               }
               else {
                 Swal.fire({
