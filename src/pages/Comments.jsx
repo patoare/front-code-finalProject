@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../contexts/AuthContext"
 import { useNavigate } from "react-router-dom"
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Comments = () => {
     const navigate = useNavigate()
@@ -9,6 +10,7 @@ const Comments = () => {
     const{ id } = useParams()
     const [comments, setComments] = useState([]);
     const [date, setDate] = useState('');
+    const [visitNumber, setVisitNumber] = useState('')
     const [commentPatient, setCommentPatient] = useState('');
     const [commentTreatment, setCommentTreatment] = useState('');
 
@@ -57,6 +59,7 @@ const Comments = () => {
                 body: JSON.stringify({
                   treatment: id,
                   date: date,
+                  visitNumber: visitNumber,
                   commentPatient: commentPatient,
                   commentTreatment: commentTreatment,
                 }),
@@ -66,6 +69,7 @@ const Comments = () => {
                 const newComment = await response.json();
                 setComments([...comments, newComment]); // Add the new comment to the list
                 setDate('');
+                setVisitNumber ('');
                 setCommentPatient('');
                 setCommentTreatment('');
               } else {
@@ -91,6 +95,13 @@ return (
           ></textarea>
         </label>
         <label  className="labelForm">
+          Visit Number:
+          <textarea className="textCreate"
+            value={visitNumber}
+            onChange={(e) => setVisitNumber(e.target.value)}
+          ></textarea>
+        </label>
+        <label  className="labelForm">
           Comments about the patient:
           <textarea className="textCreate"
             value={commentPatient}
@@ -107,17 +118,21 @@ return (
         </label>
         <br />
         <button className="button" type="submit">Post Comment</button>
+        <Link to={`/treatment/${id}`}>
+              <button className="button" type="button">Back</button>
+            </Link>
       </form>
       {/* Show existing comments */}
-      <div>
+      <div className="comments-container">
         {comments.length > 0 ? (
           comments.map((comment) => (
-            <div className="commentsCard" key={comment._id}>
+            <div className="treatment-container" key={comment._id}>
+              <div className="date-visit-container">
               <p><strong>Date:</strong> {comment.date}</p>
+              <p><strong>Visit Number:</strong> {comment.visitNumber}</p>
+              </div>
               <p><strong>Patient Comment:</strong> {comment.commentPatient}</p>
               <p><strong>Treatment Comment:</strong> {comment.commentTreatment}</p>
-               {/* Mostrar información sobre el creador del comentario */}
-              <p><strong>Created By:</strong> {comment.createdBy.type}</p>
             </div>
           ))
         ) : (

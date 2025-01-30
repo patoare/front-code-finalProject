@@ -39,18 +39,28 @@ const Treatment = () => {
     return(
         <>
     <h2 className="titlePage"> {oneTreat.patientName}</h2>
-    <ul>
-            
-            <p><strong> {oneTreat.description}</strong></p>
+    <div className="treatment-container">
+
+            <div className="date-visit-container">
             <p><strong>Date:</strong> {oneTreat.date}</p>
             <p><strong>Visit number:</strong> {oneTreat.visitNumber}</p>
+            </div>
+
+         
+            
+            <p><strong> {oneTreat.description}</strong></p>
+
             <p>{oneTreat.therapeuticTech}</p>
             <p>{oneTreat.exercises}</p>
+
             <p> <strong># {oneTreat.hashtag}</strong></p>
-          </ul> 
-          <div className="button-container">
+            </div> 
+            <div className="button-container">
           <Link to={`/comments/${id}`}>
               <button className="button" type="button">Comments</button>
+            </Link>
+            <Link to={`/trends`}>
+              <button className="button" type="button">Back</button>
             </Link>
             </div>
     </>

@@ -101,10 +101,11 @@ html {
 
   /*Home page*/
 .backgroundHome {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 2%;
+    border: #222222 2px solid;
     border-radius: 10px;   
 
 }
@@ -177,7 +178,83 @@ html {
         font-size: 1rem;
       }
 
+      /*Treatment page*/
+
+      .treatment-container {
+        width: 50%;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+    }
+    
+    .treatment-container p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .treatment-container p strong {
+        color: #d44865;
+    }
+
+    .date-visit-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*comments Page*/
+
+.comments-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas pasen a la siguiente línea si no caben */
+  gap: 20px; /* Espaciado entre tarjetas */
+  justify-content: center;
+}
  
+/*Therapist page */
+
+.therapist-info {
+  list-style: none; /* Quitar los puntos de la lista */
+  padding: 0 0 20 20;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaciado entre los elementos */
+}
+
+.therapist-info p {
+  background-color: #f8f9fa; /* Color de fondo suave */
+  padding: 10px 15px;
+  border-radius: 8px; /* Bordes redondeados */
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Hacerlo responsivo */
+@media (max-width: 600px) {
+  .therapist-info p {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+}
+
 /*Login / signup*/
 .form {
     background: #fff;

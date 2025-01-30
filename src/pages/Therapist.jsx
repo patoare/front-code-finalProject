@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { AuthContext } from "../contexts/AuthContext";
 import { useContext } from "react"
 import { useParams } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Therapist = () => {
 
@@ -37,7 +37,7 @@ const Therapist = () => {
     return(
         <>
     <h2 className="titlePage">Therapist profile</h2>
-    <ul>
+    <ul className="therapist-info">
             <p>{oneTherapist.username}  {oneTherapist.surname}</p>
             <p>I'm from {oneTherapist.country}</p>
             <p>I can speak in {oneTherapist.languages}</p>
@@ -46,6 +46,11 @@ const Therapist = () => {
             
 
     </ul>
+    <div className="button-container">
+    <Link to={`/therapists`}>
+              <button className="button" type="button">Therapists</button>
+            </Link>
+            </div>
     </>
 
     )
